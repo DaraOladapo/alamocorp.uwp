@@ -25,6 +25,28 @@ namespace AlamoCorp.UWP
         public MainPage()
         {
             this.InitializeComponent();
+            ProductsLanding.Visibility = Visibility.Visible;
+            CustomersLanding.Visibility = Visibility.Collapsed;
+            OrdersLanding.Visibility = Visibility.Collapsed;
+        }
+
+        private void OnProductsClicked(object sender, RoutedEventArgs e)
+        {
+            ProductsLanding.Visibility = Visibility.Visible;
+            CustomersLanding.Visibility = Visibility.Collapsed;
+            OrdersLanding.Visibility = Visibility.Collapsed;
+        }
+        private void OnCustomersClicked(object sender, RoutedEventArgs e)
+        {
+            ProductsLanding.Visibility = Visibility.Collapsed;
+            CustomersLanding.Visibility = Visibility.Visible;
+            OrdersLanding.Visibility = Visibility.Collapsed;
+        }
+        private void OnOrdersClicked(object sender, RoutedEventArgs e)
+        {
+            ProductsLanding.Visibility = Visibility.Collapsed;
+            CustomersLanding.Visibility = Visibility.Collapsed;
+            OrdersLanding.Visibility = Visibility.Visible;
         }
     }
 }

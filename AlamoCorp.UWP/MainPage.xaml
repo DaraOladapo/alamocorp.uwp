@@ -1,4 +1,4 @@
-﻿<Page
+﻿<Page xmlns:my="using:AlamoCorp.UWP.Views" 
     x:Class="AlamoCorp.UWP.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -9,6 +9,42 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <StackPanel VerticalAlignment="Center" Margin="12">
+                <Button Background="Transparent" BorderBrush="#FFCB5858" BorderThickness="1" Click="OnProductsClicked">
+                    <Button.Content>
+                        <StackPanel>
+                            <Image Source="/Assets/Icons/Product.png" HorizontalAlignment="Center"/>
+                            <TextBlock Text="Products" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button Background="Transparent" BorderBrush="#FFCB5858" BorderThickness="1" Click="OnOrdersClicked">
+                    <Button.Content>
+                        <StackPanel>
+                            <Image Source="/Assets/Icons/Order.png" HorizontalAlignment="Center"/>
+                            <TextBlock Text="Orders" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button Background="Transparent" BorderBrush="#FFCB5858" BorderThickness="1" Click="OnCustomersClicked">
+                    <Button.Content>
+                        <StackPanel>
+                            <Image Source="/Assets/Icons/Customer.png" HorizontalAlignment="Center"/>
+                            <TextBlock Text="Custoemrs" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1">
+            <my:ProductsLanding x:Name="ProductsLanding" />
+            <my:OrdersLanding d:IsHidden="True" x:Name="OrdersLanding"/>
+            <my:CustomersLanding d:IsHidden="True"  x:Name="CustomersLanding"/>
+        </Grid>
     </Grid>
 </Page>
